@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import React from 'react';
-/* import './App.css'; */
-/* import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; */
-import { Button } from 'react-bootstrap';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-/* import Home from './pages/Home';
+// Uncomment import statement below after building queries and mutations
+// import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
+import Home from './pages/Home';
 import SignIn from './pages/SignIn';
-import Stats from './pages/Stats'; */
+import Stats from './pages/Stats';
 
-/* function App() {
+function App() {
   return (
     <Router>
       <div className="flex-column justify-center align-center min-100-vh bg-primary">
@@ -29,25 +29,6 @@ import Stats from './pages/Stats'; */
       </div>
     </Router>
   );
-} */
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          <Button> this is button </Button>
-        </p>
-          <a 
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-            Learn React
-          </a>
-      </header>
-    </div>
-  )
 }
 
 export default App;
