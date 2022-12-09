@@ -3,9 +3,9 @@ import React from 'react';
 /* import './App.css'; */
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import LoginForm from './components/LoginForm';
-import Navbar from './components/Navbar';
-import SignUpForm from './components/SingupForm'
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import Stats from './pages/Stats';
 
 function App() {
   return (
@@ -14,15 +14,15 @@ function App() {
         <Routes>
           <Route 
             path="/" 
-            element={<LoginForm />} 
+            element={<Home />} 
           />
           <Route 
             path="/matchup" 
-            element={<Navbar />} 
+            element={<SignIn />} 
           />
           <Route 
             path="/matchup/:id" 
-            element={<SignUpForm />} 
+            element={<Stats />} 
           />
         </Routes>
       </div>
