@@ -1,34 +1,27 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import logo from './logo.svg';
+import './App.css';
+import { Button } from 'react-bootstrap';
 
-// Uncomment import statement below after building queries and mutations
-// import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-
-import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import Stats from './pages/Stats';
 
 function App() {
   return (
-    <Router>
-      <div className="flex-column justify-center align-center min-100-vh bg-primary">
-        <Routes>
-          <Route 
-            path="/" 
-            element={<Home />} 
-          />
-          <Route 
-            path="/matchup" 
-            element={<SignIn />} 
-          />
-          <Route 
-            path="/matchup/:id" 
-            element={<Stats />} 
-          />
-        </Routes>
-      </div>
-    </Router>
-  );
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <button> This is Button </button>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+    );
 }
-
-export default App;
+  
