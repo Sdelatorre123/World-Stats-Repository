@@ -15,7 +15,7 @@ function WorldCupNavbar() {
     return (
       <Navbar bg="primary" expand="lg">
         <Container fluid>
-          <Navbar.Brand className='text-white'>WorldCup
+          <Navbar.Brand className='text-white'>WorldStat
   
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

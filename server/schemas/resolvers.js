@@ -1,8 +1,10 @@
-const { } = require('../models');
+const { User } = require('../models/user');
 
 const resolvers = {
-  Query: { },
-  Mutation: { },
+  Query: { user: async () => {
+    return User.find({});
+  }, },
+  //Mutation: { },
 };
 
 module.exports = resolvers;
