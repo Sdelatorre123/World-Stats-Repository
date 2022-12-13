@@ -8,11 +8,13 @@ import './App.css';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import Stats from './pages/Stats';
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <Router>
       <div className="flex-column justify-center align-center min-100-vh bg-primary">
+      <Navbar />
         <Routes>
           <Route 
             path="/" 
