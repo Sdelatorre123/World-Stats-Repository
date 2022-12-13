@@ -1,18 +1,17 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function Home() {
-  return(
-    <>
-      <Container className="my-5">
-        <Row>
-          <Col data-aos="fade-up" className="m-4 default">
-            <h1> hello </h1>
-          </Col>
-        </Row>
-      </Container>
-    </>
+  return (
+    <Card style={{ width: '90rem' }}>
+      <Card.Header>Teams:</Card.Header>
+      <ListGroup variant="flush">
+        <ListGroup.Item>Team 1</ListGroup.Item>
+        <ListGroup.Item>Team 2</ListGroup.Item>
+        <ListGroup.Item>Team 3</ListGroup.Item>
+      </ListGroup>
+    </Card>
   );
-};
+}
 
 export default Home;
