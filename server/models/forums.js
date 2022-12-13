@@ -7,5 +7,9 @@ const forumsSchema = new Schema({
         type: int,
         default: 0,
     },
-    
-})
+
+});
+
+const forums = mongoose.model('forums', forumsSchema);
+
+module.exports = forums;
