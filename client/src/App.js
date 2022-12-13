@@ -1,11 +1,13 @@
-/* import logo from './logo.svg'; */
 import React from 'react';
-/* import './App.css'; */
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './App.css';
 
-import LoginForm from './components/LoginForm';
-import Navbar from './components/Navbar';
-import SignUpForm from './components/SingupForm'
+// Uncomment import statement below after building queries and mutations
+// import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import Stats from './pages/Stats';
 
 function App() {
   return (
@@ -14,16 +16,16 @@ function App() {
         <Routes>
           <Route 
             path="/" 
-            element={<LoginForm />} 
+            element={<Home />} 
+          />
+          {/* <Route 
+            path="/SignIn" 
+            element={<SignIn />} 
           />
           <Route 
-            path="/matchup" 
-            element={<Navbar />} 
-          />
-          <Route 
-            path="/matchup/:id" 
-            element={<SignUpForm />} 
-          />
+            path="/Stats/:id" 
+            element={<Stats />} 
+          /> */}
         </Routes>
       </div>
     </Router>
