@@ -4,6 +4,11 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+ import SingUpForm from './SingupForm';
+import LoginForm from './LoginForm';
+
+import Auth from '../utils/auth';
+
 
 
 function WorldCupNavbar() {
@@ -20,11 +25,11 @@ function WorldCupNavbar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1"><h3 className='text-white mainlink'  >Home</h3></Nav.Link>
-              <Nav.Link href="#action2"><h3 className='text-white mainlink'  >WorldCup</h3></Nav.Link>
+              <Nav.Link href="home"><h3 className='text-white mainlink'  >Home</h3></Nav.Link>
+              <Nav.Link href="worldcup"><h3 className='text-white mainlink'  >WorldCup</h3></Nav.Link>
   
-              <Nav.Link href="#action1"><h3 className='text-white mainlink'  >Login</h3></Nav.Link>
-              <Nav.Link href="#action2"><h3 className='text-white mainlink'  >SignUp</h3></Nav.Link>
+              <Nav.Link href="login"><h3 className='text-white mainlink'  >Login</h3></Nav.Link>
+              <Nav.Link href="signup"><h3 className='text-white mainlink'  >SignUp</h3></Nav.Link>
             
             </Nav>
             <Form className="d-flex">
