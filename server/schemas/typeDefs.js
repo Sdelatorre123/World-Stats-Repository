@@ -9,12 +9,10 @@ const typeDefs = gql`
 
   type Comments {
     _id: ID
-    rating
   }
 
   type Forums {
     _id: ID
-    postCount
   }
 
   type Team {
