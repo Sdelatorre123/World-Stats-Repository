@@ -6,11 +6,13 @@ import './App.css';
 // import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import Stats from './pages/Stats';
+/* import SignIn from './pages/SignIn';
+import Stats from './pages/Stats'; */
 import Navbar from './components/Navbar'
 import LoginForm from './components/LoginForm';
-import SignupForm from './components/SingupForm'
+import SignupForm from './components/SingupForm';
+/* import Footer from './components/Footer'; */
+
 
 function App() {
   return (
@@ -30,6 +32,12 @@ function App() {
           path="/login"
           element={<LoginForm />}
           />
+         {/*  <Route
+          path="/footer"
+          element={<Footer />}
+          /> */}
+
+          
           {/* <Route 
             path="/SignIn" 
             element={<SignIn />} 
