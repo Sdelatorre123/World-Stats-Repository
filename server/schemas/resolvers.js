@@ -3,6 +3,7 @@ const user = require('../models/user');
 const user = require('../models/user');
 const { User } = require('../models/user');
 const { signToken } = require('../utils/Auth');
+const { Thought } = require ('../models/Thought')
 
 const resolvers = {
   Query: {
@@ -46,6 +47,48 @@ const resolvers = {
       return { token, user };
     },
   },
+
+
+  
+  Query: {
+    thoughts: async () => {
+      return Thought.find().sort({ createdAt: -1 });
+    },
+
+    thought: async (parent, { thoughtId }) => {
+      return Thought.findOne({ _id: thoughtId });
+    },
+  },
+
+  Mutation: {
+    addThought: async (parent, { thoughtText, thoughtAuthor }) => {
+      return Thought.create({ thoughtText, thoughtAuthor });
+    },
+    addComment: async (parent, { thoughtId, commentText }) => {
+      return Thought.findOneAndUpdate(
+        { _id: thoughtId },
+        {
+          $addToSet: { comments: { commentText } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+    removeThought: async (parent, { thoughtId }) => {
+      return Thought.findOneAndDelete({ _id: thoughtId });
+    },
+    removeComment: async (parent, { thoughtId, commentId }) => {
+      return Thought.findOneAndUpdate(
+        { _id: thoughtId },
+        { $pull: { comments: { _id: commentId } } },
+        { new: true }
+      );
+    },
+  },
 };
+
+
 
 module.exports = resolvers;

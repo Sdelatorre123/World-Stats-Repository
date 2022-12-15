@@ -1,16 +1,23 @@
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { Card, Container, Col, Row } from 'react-bootstrap';
+import Team from '../components/Team';
+import Image from '../components/Image';
 
 function Home() {
   return (
-    <Card style={{ width: '90rem' }}>
-      <Card.Header>Teams:</Card.Header>
-      <ListGroup variant="flush">
-        <ListGroup.Item>Team 1</ListGroup.Item>
-        <ListGroup.Item>Team 2</ListGroup.Item>
-        <ListGroup.Item>Team 3</ListGroup.Item>
-      </ListGroup>
+    <Container className="my-4">
+    <Card className="shadow-lg p-4">
+      <form>
+        <Row>
+          <Col md={8}> 
+          <Team></Team>
+            </Col>
+          <Col md={4}>
+          <Image></Image>
+            </Col>
+        </Row>
+      </form>
     </Card>
+    </Container>
   );
 }
 
