@@ -8,15 +8,27 @@ import './App.css';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import Stats from './pages/Stats';
+import Navbar from './components/Navbar'
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SingupForm'
 
 function App() {
   return (
     <Router>
       <div className="flex-column justify-center align-center min-100-vh bg-primary">
+      <Navbar />
         <Routes>
           <Route 
             path="/" 
             element={<Home />} 
+          />
+          <Route
+          path="/signup"
+          element={<SignupForm />}
+          />
+           <Route
+          path="/login"
+          element={<LoginForm />}
           />
           {/* <Route 
             path="/SignIn" 
