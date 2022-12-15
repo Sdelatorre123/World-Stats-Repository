@@ -17,7 +17,7 @@ export const getMe = (token) => {
       body: JSON.stringify(userData),
     });
   };
-  
+
   export const loginUser = (userData) => {
     return fetch('/api/users/login', {
       method: 'POST',
