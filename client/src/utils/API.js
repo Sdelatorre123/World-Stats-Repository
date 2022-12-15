@@ -28,7 +28,7 @@ export const getMe = (token) => {
     });
   };
 
-  export const loginUser = (userData) => {
+  /* export const loginUser = (userData) => {
     return fetch('/api/users/login', {
       method: 'POST',
       headers: {
@@ -36,4 +36,4 @@ export const getMe = (token) => {
       },
       body: JSON.stringify(userData),
     });
-  };
+  }; */
