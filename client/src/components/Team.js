@@ -17,7 +17,9 @@ function Team() {
       <Card className='my-2 width: 18rem text-center'>
       <Card.Img variant="top" src="https://i.pinimg.com/originals/f2/7a/79/f27a79933bdac5ac3a3307a5f044e8c9.jpg" />
       <Card.Body>
+        <a href="/Subscription.js">
       <Button> Subscription Features </Button>
+        </a>
       <Card.Text>Subscribe today to get the newest exclusive features </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
@@ -26,9 +28,7 @@ function Team() {
         <ListGroup.Item>Individual player stats</ListGroup.Item>
       </ListGroup>
     </Card>
-  </React.Fragment>
-  
-  
+  </React.Fragment> 
 }
 
 export default Team
