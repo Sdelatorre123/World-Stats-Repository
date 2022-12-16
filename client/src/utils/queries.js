@@ -16,7 +16,7 @@ export const QUERY_THOUGHTS = gql`
 export const QUERY_USER = gql`
   {
     user {
-      name
+      username
       comments {
         _id
         rating

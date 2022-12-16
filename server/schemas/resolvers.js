@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 18ffead2482f682b9e7079888851c8991b8b21b7
 const { User } = require('../models/user');
 const { signToken } = require('../utils/Auth');
 const { Thought } = require ('../models/Thought')
@@ -25,8 +21,8 @@ const resolvers = {
 
   },
   Mutation: {
-    adduser: async (parent, { name, email, password }) => {
-      const user = await user.create({ name, email, password });
+    adduser: async (parent, { username, email, password }) => {
+      const user = await user.create({ username, email, password });
       const token = signToken(user);
 
       return { token, user };
