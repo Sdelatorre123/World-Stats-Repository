@@ -14,11 +14,12 @@ import { setContext } from '@apollo/client/link/context';
 // import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
 import Home from './pages/Home';
-import SignIn from './pages/SignIn';
-import Stats from './pages/Stats';
+/* import SignIn from './pages/SignIn';
+import Stats from './pages/Stats'; */
 import Navbar from './components/Navbar'
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SingupForm'
+import Discussion from './pages/Discussion';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -63,6 +64,11 @@ function App() {
           path="/login"
           element={<LoginForm />}
           />
+           <Route
+          path="/discussion"
+          element={<Discussion />}
+          />
+         
           {/* <Route 
             path="/SignIn" 
             element={<SignIn />} 
@@ -79,39 +85,3 @@ function App() {
 }
 
 export default App;
-/* import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
-function NavbarDarkExample() {
-  return (
-    <Navbar variant="dark" bg="dark" expand="lg">
-      <Container fluid>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-dark-example" />
-        <Navbar.Collapse id="navbar-dark-example">
-          <Nav>
-            <NavDropdown
-              id="nav-dropdown-dark-example"
-              title="Dropdown"
-              menuVariant="dark"
-            >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-}
-
-export default NavbarDarkExample; */
