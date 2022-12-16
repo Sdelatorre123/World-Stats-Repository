@@ -20,6 +20,7 @@ import Navbar from './components/Navbar'
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SingupForm'
 import Discussion from './pages/Discussion';
+import Subscription from './components/Subscription';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -68,7 +69,10 @@ function App() {
           path="/discussion"
           element={<Discussion />}
           />
-         
+          <Route
+          path="/subscription"
+          element={<Subscription />} 
+          />
           {/* <Route 
             path="/SignIn" 
             element={<SignIn />} 
