@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 18ffead2482f682b9e7079888851c8991b8b21b7
 const { User } = require('../models/user');
 const { signToken } = require('../utils/Auth');
 const { Thought } = require ('../models/Thought')
