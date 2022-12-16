@@ -10,10 +10,10 @@ export const QUERY_THOUGHTS = gql`
       createdAt
     }
   }
-}
+`;
 
 
-export const QUERY_USER = gql
+export const QUERY_USER = gql`
   {
     user {
       name
@@ -23,7 +23,5 @@ export const QUERY_USER = gql
       }
       }
     }
-  }
-}
 `;
 

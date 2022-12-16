@@ -1,6 +1,3 @@
-const user = require('../models/user');
-const user = require('../models/user');
-const user = require('../models/user');
 const { User } = require('../models/user');
 const { signToken } = require('../utils/Auth');
 const { Thought } = require ('../models/Thought')
@@ -15,12 +12,12 @@ const resolvers = {
       return user.findOne({ _id: userId });
     },
 
-    me: async (parent, args, context) => {
+   /*  me: async (parent, args, context) => {
       if (context.user) {
         return user.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError('You need to be logged in!');
-    },
+    }, */
 
   },
   Mutation: {
@@ -49,7 +46,7 @@ const resolvers = {
   },
 
 
-  
+ /*  
   Query: {
     thoughts: async () => {
       return Thought.find().sort({ createdAt: -1 });
@@ -58,13 +55,13 @@ const resolvers = {
     thought: async (parent, { thoughtId }) => {
       return Thought.findOne({ _id: thoughtId });
     },
-  },
+  }, */
 
   Mutation: {
     addThought: async (parent, { thoughtText, thoughtAuthor }) => {
       return Thought.create({ thoughtText, thoughtAuthor });
     },
-    addComment: async (parent, { thoughtId, commentText }) => {
+    /* addComment: async (parent, { thoughtId, commentText }) => {
       return Thought.findOneAndUpdate(
         { _id: thoughtId },
         {
@@ -75,8 +72,8 @@ const resolvers = {
           runValidators: true,
         }
       );
-    },
-    removeThought: async (parent, { thoughtId }) => {
+    }, */
+    /* removeThought: async (parent, { thoughtId }) => {
       return Thought.findOneAndDelete({ _id: thoughtId });
     },
     removeComment: async (parent, { thoughtId, commentId }) => {
@@ -85,9 +82,9 @@ const resolvers = {
         { $pull: { comments: { _id: commentId } } },
         { new: true }
       );
-    },
+    },*/
   },
-};
+}; 
 
 
 

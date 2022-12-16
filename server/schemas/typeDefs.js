@@ -7,6 +7,13 @@ const typeDefs = gql`
     email: String
   }
 
+  type Thought {
+    _id: ID
+    thoughtText: String
+    thoughtAuthor: String
+    createdAt: String
+  }
+
   type Comments {
     _id: ID
   }
@@ -16,18 +23,27 @@ const typeDefs = gql`
   }
 
   type Team {
-    _id: Id
+    _id: ID
     name: String
+  }
+
+  type Auth {
+    token: ID
+    user: User
   }
 
   type Query {
     user: [User]
     team: Team
+    thought: Thought
+
   }
 
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addThought(thoughtText: String!, thoughtAuthor: String!): Thought
+  }
 `;
 
 module.exports = typeDefs;
