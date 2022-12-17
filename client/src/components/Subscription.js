@@ -3,9 +3,7 @@ import { Card } from 'react-bootstrap'
 
 function Subscription() {
   return (
-    <Card>
-        
-    </Card>
+    <div>Subscription</div>
   )
 }
 

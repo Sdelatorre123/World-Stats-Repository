@@ -24,6 +24,9 @@ app.get('/', (req, res) => {
 });
 
 // stripe
+// Standard Subscription: price_1MG3g0LpXyZJqOSzIy4xGHUi
+// Premium Subscription: price_1MG3hpLpXyZJqOSzhcHjyFhj
+// Exclusive Subscription: price_1MG3jeLpXyZJqOSzv5niurtQ
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
