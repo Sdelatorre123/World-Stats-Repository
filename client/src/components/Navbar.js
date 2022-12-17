@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
  import SingUpForm from './SingupForm';
 import LoginForm from './LoginForm';
 import Discussion from '../pages/Discussion';
+import Subscription from './Subscription'
 
 import Auth from '../utils/auth';
 
@@ -32,6 +33,7 @@ function WorldCupNavbar() {
               <Nav.Link href="login"><h3 className='text-white mainlink'  >Login</h3></Nav.Link>
               <Nav.Link href="signup"><h3 className='text-white mainlink'  >SignUp</h3></Nav.Link>
               <Nav.Link href="discussion"><h3 className='text-white mainlink'  >Discussion</h3></Nav.Link>
+              <Nav.Link href="subscription"><h3 className='text-white mainlink'  >Subscription</h3></Nav.Link>
             
             </Nav>
             <Form className="d-flex">
