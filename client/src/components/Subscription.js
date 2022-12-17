@@ -21,14 +21,7 @@ const productsArray = [
 ];
 
 <<<<<<< HEAD
-function Subscription() {
-  return (
-    <Card>
-      <p>
-        testing testing 
-      </p>
-    </Card>
-  )
+
 =======
     let productData = productsArray.find(product => product.id === id);
 
