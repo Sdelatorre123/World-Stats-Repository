@@ -2,6 +2,21 @@ import React from 'react'
 import { Card, ListGroup, Button, Row, Col, Container, Form, } from 'react-bootstrap'
 
 function Team() {
+const checkout = async () => {
+  await fetch("http://localhost:3000/checkout", {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json'
+    },
+  }).then((response) => {
+    return response.json();
+  }).then((response) => {
+    if(response.url) {
+      window.location.assign(response.url);
+    }
+  });
+}
+
   return <React.Fragment>
      <Card>
       <Card.Body>
@@ -22,20 +37,20 @@ function Team() {
       <Container>
       <Row>
         <Col xs>
-        <a href="/Subscription.js">
-          <Button variant="danger" type="submit"> Standard $10/month </Button>
+        <a href="./Subscription.js">
+          <Button variant="success" onClick={checkout}> Standard $10/month </Button>
         </a>
           <Form.Check type="radio" id={`default-`} label={`Individual player stats`} />
           </Col>
         <Col xs={{ order: 12 }}>
-        <a href="/Subscription.js">
-          <Button variant="danger" type="submit"> Premium $15/month</Button>
+        <a href="./Subscription.js">
+          <Button variant="success" onClick={checkout}> Premium $15/month</Button>
         </a>
           <Form.Check type="radio" id={`default-`} label={`The ability to join chat rooms`} />
           </Col>
         <Col xs={{ order: 1 }}>
-        <a href="/Subscription.js">
-          <Button variant="danger" type="submit"> Exclusive $20/month</Button>
+        <a href="./Subscription.js">
+          <Button variant="success" onClick={checkout}> Exclusive $20/month</Button>
         </a>
           <Form.Check type="radio" id={`default-`} label={`Get exclusive merch from your favorite teams and players`} />
         </Col>

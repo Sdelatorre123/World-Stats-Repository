@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+
  import SingUpForm from './SingupForm';
 import LoginForm from './LoginForm';
 import Discussion from '../pages/Discussion';
