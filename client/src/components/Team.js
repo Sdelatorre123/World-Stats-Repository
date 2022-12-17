@@ -1,7 +1,22 @@
 import React from 'react'
-import { Card, ListGroup, Button} from 'react-bootstrap'
+import { Card, ListGroup, Button, Row, Col, Container, Form, } from 'react-bootstrap'
 
 function Team() {
+const checkout = async () => {
+  await fetch("http://localhost:3000/checkout", {
+    method: "POST",
+    headers: {
+      'Content-type': 'application/json'
+    },
+  }).then((response) => {
+    return response.json();
+  }).then((response) => {
+    if(response.url) {
+      window.location.assign(response.url);
+    }
+  });
+}
+
   return <React.Fragment>
      <Card>
       <Card.Body>
@@ -17,15 +32,31 @@ function Team() {
       <Card className='my-2 width: 18rem text-center'>
       <Card.Img variant="top" src="https://i.pinimg.com/originals/f2/7a/79/f27a79933bdac5ac3a3307a5f044e8c9.jpg" />
       <Card.Body>
-        <a href="/Subscription.js">
-      <Button> Subscription Features </Button>
-        </a>
-      <Card.Text>Subscribe today to get the newest exclusive features </Card.Text>
+      <Card.Text>Subscribe today to join the community and get the most recent WorldCup updates!!  </Card.Text>
       </Card.Body>
+      <Container>
+      <Row>
+        <Col xs>
+        <a href="./Subscription.js">
+          <Button variant="success" onClick={checkout}> Standard $10/month </Button>
+        </a>
+          <Form.Check type="radio" id={`default-`} label={`Individual player stats`} />
+          </Col>
+        <Col xs={{ order: 12 }}>
+        <a href="./Subscription.js">
+          <Button variant="success" onClick={checkout}> Premium $15/month</Button>
+        </a>
+          <Form.Check type="radio" id={`default-`} label={`The ability to join chat rooms`} />
+          </Col>
+        <Col xs={{ order: 1 }}>
+        <a href="./Subscription.js">
+          <Button variant="success" onClick={checkout}> Exclusive $20/month</Button>
+        </a>
+          <Form.Check type="radio" id={`default-`} label={`Get exclusive merch from your favorite teams and players`} />
+        </Col>
+      </Row>
+    </Container>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Get exclusive merch from your favorite teams and players! </ListGroup.Item>
-        <ListGroup.Item>The ability to join chat rooms </ListGroup.Item>
-        <ListGroup.Item>Individual player stats</ListGroup.Item>
       </ListGroup>
     </Card>
   </React.Fragment> 

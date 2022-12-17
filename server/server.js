@@ -24,7 +24,42 @@ app.get('/', (req, res) => {
 });
 
 // stripe
+// Standard Subscription: price_1MG3g0LpXyZJqOSzIy4xGHUi
+// Premium Subscription: price_1MG3hpLpXyZJqOSzhcHjyFhj
+// Exclusive Subscription: price_1MG3jeLpXyZJqOSzv5niurtQ
+/* const express = require('express'); */
+var cors = require('cors');
+const stripe = require('stripe')('sk_test_51MFS1VLpXyZJqOSza2VsE6jy7VR6mRwrHfVzwi5nVBB6u484CmoB0Tikne7zZYB2BcNaePLphvCeOM2fNqHeagMS00rJQcnai7');
 
+app.use(cors());
+app.use(express.static("public"));
+app.use(express.json());
+
+app.post("/checkout", async (req, res) => {
+  console.log(req.body)
+  const items = req.body.itmes;
+  let lineItems = [];
+  items.forEach((item)=> {
+    lineItems.push(
+      {
+        price: item.id,
+        quantity: item.quantity
+      }
+    )
+  });
+
+  const session = await stripe.checkout.sessions.create({
+    line_itmes: lineItems,
+    mode: 'payment',
+    success_url: "http://localhost:3000/success",
+    cancel_url: "http://localhost:3000/cancel"
+  });
+
+  res.send(JSON.stringify({
+    url: sessopm.url
+  }));
+});
+app.listen(3000, () => console.log("Listening on port 3000"))
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
