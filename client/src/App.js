@@ -21,9 +21,8 @@ import Navbar from './components/Navbar'
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SingupForm'
 import Discussion from './pages/Discussion';
-import Subscription from './components/Subscription';
-import cancel from './pages/cancel';
-import success from './pages/success';
+/* import cancel from './pages/cancel';
+import success from './pages/success'; */
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -56,46 +55,14 @@ function App() {
       <div className="flex-column justify-center align-center min-100-vh bg-primary">
       <Navbar />
         <Routes>
-          <Route 
-            path="/" 
-            element={<Home />} 
-          />
-          <Route
-          path="/signup"
-          element={<SignupForm />}
-          />
-           <Route
-          path="/login"
-          element={<LoginForm />}
-          />
-           <Route
-          path="/discussion"
-          element={<Discussion />}
-          />
-          <Route
-          path="/subscription"
-          element={<Subscription />} 
-          />
-          {/* <Route 
-          path
-          index element={<store />} 
-          /> */}
-          <Route 
-          path="success" 
-          element={<success />} 
-          />
-          <Route 
-          path="cancel" 
-          element={<cancel />} 
-          />
-          {/* <Route 
-            path="/SignIn" 
-            element={<SignIn />} 
-          />
-          <Route 
-            path="/Stats/:id" 
-            element={<Stats />} 
-          /> */}
+
+          <Route path="/" element={<Home />} />
+          <Route path="/signup" element={<SignupForm />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/discussion" element={<Discussion />} />
+      
+          {/* <Route path="/success" element={<success />} />
+          <Route path="/cancel" element={<cancel />} /> */}
         </Routes>
       </div>
     </Router>
