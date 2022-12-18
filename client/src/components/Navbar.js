@@ -10,6 +10,7 @@ import LoginForm from './LoginForm';
 import Discussion from '../pages/Discussion';
 
 import Auth from '../utils/auth';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 
@@ -43,6 +44,7 @@ function WorldCupNavbar() {
                 aria-label="Search"
               />
               <Button className='text-white mainlink' variant="outline-success">Search</Button>
+              <Button href="subscription"> Subscription </Button>
             </Form>
           </Navbar.Collapse>
         </Container>

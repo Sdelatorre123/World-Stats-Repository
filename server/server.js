@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 // Exclusive Subscription: price_1MG3jeLpXyZJqOSzv5niurtQ
 /* const express = require('express'); */
 var cors = require('cors');
-const stripe = require('stripe')('sk_test_51MFS1VLpXyZJqOSza2VsE6jy7VR6mRwrHfVzwi5nVBB6u484CmoB0Tikne7zZYB2BcNaePLphvCeOM2fNqHeagMS00rJQcnai7');
+const stripe = require('stripe')('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');
 
 app.use(cors());
 app.use(express.static("public"));

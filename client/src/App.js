@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import {
@@ -21,6 +22,8 @@ import LoginForm from './components/LoginForm';
 import SignupForm from './components/SingupForm'
 import Discussion from './pages/Discussion';
 import Subscription from './components/Subscription';
+import cancel from './pages/cancel';
+import success from './pages/success';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -72,6 +75,18 @@ function App() {
           <Route
           path="/subscription"
           element={<Subscription />} 
+          />
+          {/* <Route 
+          path
+          index element={<store />} 
+          /> */}
+          <Route 
+          path="success" 
+          element={<success />} 
+          />
+          <Route 
+          path="cancel" 
+          element={<cancel />} 
           />
           {/* <Route 
             path="/SignIn" 

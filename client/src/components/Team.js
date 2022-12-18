@@ -1,5 +1,7 @@
 import React from 'react'
 import { Card, ListGroup, Button, Row, Col, Container, Form, } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Subscription from './Subscription';
 
 function Team() {
 const checkout = async () => {
@@ -30,29 +32,17 @@ const checkout = async () => {
       </Card.Body>
       </Card>
       <Card className='my-2 width: 18rem text-center'>
-      <Card.Img variant="top" src="https://i.pinimg.com/originals/f2/7a/79/f27a79933bdac5ac3a3307a5f044e8c9.jpg" />
+      <Card.Img variant="top" src="" />
       <Card.Body>
       <Card.Text>Subscribe today to join the community and get the most recent WorldCup updates!!  </Card.Text>
       </Card.Body>
       <Container>
-      <Row>
-        <Col xs>
-        <a href="./Subscription.js">
-          <Button variant="success" onClick={checkout}> Standard $10/month </Button>
-        </a>
-          <Form.Check type="radio" id={`default-`} label={`Individual player stats`} />
-          </Col>
-        <Col xs={{ order: 12 }}>
-        <a href="./Subscription.js">
-          <Button variant="success" onClick={checkout}> Premium $15/month</Button>
-        </a>
-          <Form.Check type="radio" id={`default-`} label={`The ability to join chat rooms`} />
-          </Col>
-        <Col xs={{ order: 1 }}>
-        <a href="./Subscription.js">
-          <Button variant="success" onClick={checkout}> Exclusive $20/month</Button>
-        </a>
-          <Form.Check type="radio" id={`default-`} label={`Get exclusive merch from your favorite teams and players`} />
+      <Row xs={1} md={3} className="g-4">
+        <Col align="center">
+          <h1> Products </h1>
+        </Col>
+        <Col align="center">
+          <h1> Products </h1>
         </Col>
       </Row>
     </Container>
