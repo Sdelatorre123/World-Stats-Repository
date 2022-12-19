@@ -28,15 +28,10 @@ app.get('/', (req, res) => {
 // Standard Subscription: price_1MG3g0LpXyZJqOSzIy4xGHUi
 // Premium Subscription: price_1MG3hpLpXyZJqOSzhcHjyFhj
 // Exclusive Subscription: price_1MG3jeLpXyZJqOSzv5niurtQ
-const express = require('express');
+//const express = require('express');
 var cors = require('cors');
-<<<<<<< HEAD
 //const stripe = require('stripe')('sk_test_51MFS1VLpXyZJqOSza2VsE6jy7VR6mRwrHfVzwi5nVBB6u484CmoB0Tikne7zZYB2BcNaePLphvCeOM2fNqHeagMS00rJQcnai7');
-||||||| 91a81f7
-const stripe = require('stripe')('sk_test_51MFS1VLpXyZJqOSza2VsE6jy7VR6mRwrHfVzwi5nVBB6u484CmoB0Tikne7zZYB2BcNaePLphvCeOM2fNqHeagMS00rJQcnai7');
-=======
 const stripe = require('stripe')('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');
->>>>>>> 463db1c1603f4108f96be62aba2675baf5adce40
 
 app.use(cors());
 app.use(express.static("public"));

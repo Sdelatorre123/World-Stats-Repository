@@ -1,6 +1,6 @@
 const { User } = require('../models/user');
 const { signToken } = require('../utils/Auth');
-const { Thought } = require ('../models/Thought')
+const { Thread } = require('../models/Thread')
 
 const resolvers = {
   Query: {
@@ -12,12 +12,12 @@ const resolvers = {
       return user.findOne({ _id: userId });
     },
 
-   /*  me: async (parent, args, context) => {
-      if (context.user) {
-        return user.findOne({ _id: context.user._id });
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    }, */
+    /*  me: async (parent, args, context) => {
+       if (context.user) {
+         return user.findOne({ _id: context.user._id });
+       }
+       throw new AuthenticationError('You need to be logged in!');
+     }, */
 
   },
   Mutation: {
@@ -46,24 +46,24 @@ const resolvers = {
   },
 
 
- /*  
-  Query: {
-    thoughts: async () => {
-      return Thought.find().sort({ createdAt: -1 });
-    },
-
-    thought: async (parent, { thoughtId }) => {
-      return Thought.findOne({ _id: thoughtId });
-    },
-  }, */
+  
+   Query: {
+     threads: async () => {
+       return Thread.find().sort({ createdAt: -1 });
+     },
+ 
+     thread: async (parent, { threadID }) => {
+       return Thread.findOne({ _id: threadID });
+     },
+   }, 
 
   Mutation: {
-    addThought: async (parent, { thoughtText, thoughtAuthor }) => {
-      return Thought.create({ thoughtText, thoughtAuthor });
+    addThread: async (parent, { threadText, threadAuthor }) => {
+      return Thread.create({ threadText, threadAuthor });
     },
-    /* addComment: async (parent, { thoughtId, commentText }) => {
-      return Thought.findOneAndUpdate(
-        { _id: thoughtId },
+    addComment: async (parent, { threadId, commentText }) => {
+      return Thread.findOneAndUpdate(
+        { _id: threadId },
         {
           $addToSet: { comments: { commentText } },
         },
@@ -72,19 +72,19 @@ const resolvers = {
           runValidators: true,
         }
       );
-    }, */
-    /* removeThought: async (parent, { thoughtId }) => {
-      return Thought.findOneAndDelete({ _id: thoughtId });
     },
-    removeComment: async (parent, { thoughtId, commentId }) => {
-      return Thought.findOneAndUpdate(
-        { _id: thoughtId },
+    removeThread: async (parent, { threadId }) => {
+      return Thread.findOneAndDelete({ _id: threadId });
+    },
+    removeComment: async (parent, { threadId, commentId }) => {
+      return Thread.findOneAndUpdate(
+        { _id: threadId },
         { $pull: { comments: { _id: commentId } } },
         { new: true }
       );
-    },*/
+    }, 
   },
-}; 
+};
 
 
 

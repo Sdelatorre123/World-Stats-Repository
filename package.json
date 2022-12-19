@@ -21,14 +21,7 @@
         "jsonwebtoken": "^8.5.1",
         "react-bootstrap": "^2.7.0",
         "react-dom": "^18.2.0",
-<<<<<<< HEAD
         "react-router-dom": "^6.4.5",
         "stripe": "^11.4.0"
-||||||| 91a81f7
-        "react-router-dom": "^6.4.5",
-        "jsonwebtoken": "^8.5.1"
-=======
-        "react-router-dom": "^6.4.5"
->>>>>>> 463db1c1603f4108f96be62aba2675baf5adce40
     }
 }
