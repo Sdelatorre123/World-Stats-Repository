@@ -26,6 +26,7 @@ import Navbar from './components/Navbar'
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SingupForm'
 import Discussion from './pages/Discussion';
+import Subscription from './pages/Subscription';
 /* import cancel from './pages/cancel';
 import success from './pages/success'; */
 
@@ -66,6 +67,7 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/discussion" element={<Discussion />} />
           <Route path="checkout" element={<Checkout />} />
+          <Route path="/Subscription" element={<Subscription />} />
           <Route path="success" element={<Success />} />
           <Route path="cancel" element={<Cancel />} />
       

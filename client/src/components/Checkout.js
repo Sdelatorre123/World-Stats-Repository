@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+/* import 'bootstrap/dist/css/bootstrap.min.css';
 import { loadStripe } from "@stripe/stripe-js"
 import { useState } from "react";
 
@@ -46,14 +46,11 @@ const redirectToCheckout = async () => {
 
 if (stripeError) alert(stripeError);
 
-return (
-  <div className="checkout">
-  <h1>Stripe Checkout</h1>
-  <p className="checkout-title">Design+Code React Hooks Course</p>
-  <p className="checkout-description">
-    Learn how to build a website with React Hooks
-  </p>
-  <h1 className="checkout-price">$19</h1>
+return ( */
+  {/* <div className="checkout">
+  <h1>Subscribe</h1>
+  <p className="checkout-title"> Subscribe to get the newest info about the World Cup!! </p>
+  <h1 className="checkout-price">$10</h1>
   <img
     className="checkout-product-image"
     src={ProductImage}
@@ -73,10 +70,10 @@ return (
       <p className="text">{isLoading ? "Loading..." : "Buy"}</p>
     </div>
   </button>
-</div>
-);
+</div> */}
+/* );
 };
-export default Checkout;
+export default Checkout; */
 /* const checkout = async () => {
   await fetch("http://localhost:3000/checkout", {
     method: "POST",
