@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-
+const {authMiddleware} = require("./utils/Auth")
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
@@ -10,6 +10,7 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: authMiddleware
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -51,15 +52,15 @@ app.post("/checkout", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_itmes: lineItems,
     mode: 'payment',
-    success_url: "http://localhost:3000/success",
-    cancel_url: "http://localhost:3000/cancel"
+    success_url: "http://localhost:5000/success",
+    cancel_url: "http://localhost:5000/cancel"
   });
 
   res.send(JSON.stringify({
     url: sessopm.url
   }));
 });
-app.listen(3000, () => console.log("Listening on port 3000"))
+//app.listen(5000, () => console.log("Listening on port 5000"))
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {

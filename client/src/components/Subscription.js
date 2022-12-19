@@ -20,9 +20,6 @@ const productsArray = [
     },
 ];
 
-<<<<<<< HEAD
-
-=======
     let productData = productsArray.find(product => product.id === id);
 
     if (productData === undefined) {
@@ -30,7 +27,6 @@ const productsArray = [
         return undefined;
 }
 return productData;
->>>>>>> 91a81f74b7f7f8f39b226ef7cee11e7ec1fbdec4
 }
 
 export default getProductData;

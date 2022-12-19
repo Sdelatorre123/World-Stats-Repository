@@ -1,5 +1,5 @@
-const forums = require('./forums');
-const user = require('./user');
-const comments = require('./comments');
+//const forums = require('./forums');
+const User = require('./user');
+//cnst comments = require('./comments');
 
-module.exports = { forums, user, comments };
+module.exports = {  User };

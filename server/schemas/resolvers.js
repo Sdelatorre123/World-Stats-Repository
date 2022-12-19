@@ -1,4 +1,4 @@
-const { User } = require('../models/user');
+const { User } = require('../models');
 const { signToken } = require('../utils/Auth');
 const { Thought } = require ('../models/Thought')
 
@@ -9,7 +9,7 @@ const resolvers = {
     },
 
     user: async (parent, { userId }) => {
-      return user.findOne({ _id: userId });
+      return User.findOne({ _id: userId });
     },
 
    /*  me: async (parent, args, context) => {
@@ -21,20 +21,26 @@ const resolvers = {
 
   },
   Mutation: {
-    adduser: async (parent, { username, email, password }) => {
-      const user = await user.create({ username, email, password });
+    addUser: async (parent, { username, email, password }) => {
+      console.log(username,email,password,"Add User")
+      try{
+      const user = await User.create({ username, email, password });
       const token = signToken(user);
+      console.log(token,user,"Add User")
 
       return { token, user };
+      }catch(err){
+        console.log(err,"Error")
+      }
     },
     login: async (parent, { email, password }) => {
-      const user = await user.findOne({ email });
+      const user = await User.findOne({ email });
 
       if (!user) {
         throw new AuthenticationError('No user with this email found!');
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await User.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
@@ -43,7 +49,7 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-  },
+
 
 
  /*  
@@ -57,7 +63,7 @@ const resolvers = {
     },
   }, */
 
-  Mutation: {
+  //Mutation: {
     addThought: async (parent, { thoughtText, thoughtAuthor }) => {
       return Thought.create({ thoughtText, thoughtAuthor });
     },
@@ -83,7 +89,7 @@ const resolvers = {
         { new: true }
       );
     },*/
-  },
+  }
 }; 
 
 
