@@ -1,12 +1,26 @@
 const db = require('../config/connection');
-const { User } = require('../models/user');
+const { User, team } = require('../models');
+const teamSeeds = require('./')
 
 
 db.once('open', async () => {
-    await User.deleteMany({});
+  try {
+    await team.deleteMany({});
+    await team.create(teamSeeds);
+
+    console.log('all done!');
+    process.exit(0);
+  } catch (err) {
+    throw err;
+  }
+});
 
 
-    const userData = [];
+db.once('open', async () => {
+  await User.deleteMany({});
+
+
+  const userData = [];
   for (let i = 1; i < 51; i++) {
     const username = `user${i}`;
     const email = `${username}@gmail.com`;

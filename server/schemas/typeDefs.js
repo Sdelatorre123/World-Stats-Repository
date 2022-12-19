@@ -5,12 +5,13 @@ const typeDefs = gql`
     _id: ID
     username: String!
     email: String
+    favoriteTeam: Team
   }
 
-  type Thought {
+  type Thread {
     _id: ID
-    thoughtText: String
-    thoughtAuthor: String
+    threadText: String
+    threadAuthor: String
     createdAt: String
   }
 
@@ -35,7 +36,9 @@ const typeDefs = gql`
   type Query {
     user: [User]
     team: Team
-    thought: Thought
+    thread: Tread
+    forums: forums
+    comments: [Comments]
 
   }
 

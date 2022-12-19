@@ -17,9 +17,10 @@
     },
     "dependencies": {
         "bootstrap": "^5.2.3",
+        "jsonwebtoken": "^8.5.1",
         "react-bootstrap": "^2.7.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.4.5",
-        "jsonwebtoken": "^8.5.1"
+        "stripe": "^11.4.0"
     }
 }

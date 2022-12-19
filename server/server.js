@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-
+const { authMiddleware } = require('./utils/Auth');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
@@ -10,6 +10,7 @@ const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  context: authMiddleware,
 });
 
 app.use(express.urlencoded({ extended: false }));
@@ -29,7 +30,7 @@ app.get('/', (req, res) => {
 // Exclusive Subscription: price_1MG3jeLpXyZJqOSzv5niurtQ
 /* const express = require('express'); */
 var cors = require('cors');
-const stripe = require('stripe')('sk_test_51MFS1VLpXyZJqOSza2VsE6jy7VR6mRwrHfVzwi5nVBB6u484CmoB0Tikne7zZYB2BcNaePLphvCeOM2fNqHeagMS00rJQcnai7');
+//const stripe = require('stripe')('sk_test_51MFS1VLpXyZJqOSza2VsE6jy7VR6mRwrHfVzwi5nVBB6u484CmoB0Tikne7zZYB2BcNaePLphvCeOM2fNqHeagMS00rJQcnai7');
 
 app.use(cors());
 app.use(express.static("public"));
@@ -48,18 +49,18 @@ app.post("/checkout", async (req, res) => {
     )
   });
 
-  const session = await stripe.checkout.sessions.create({
-    line_itmes: lineItems,
-    mode: 'payment',
-    success_url: "http://localhost:3000/success",
-    cancel_url: "http://localhost:3000/cancel"
-  });
+  //const session = await stripe.checkout.sessions.create({
+    //line_itmes: lineItems,
+    //mode: 'payment',
+    //success_url: "http://localhost:3000/success",
+    //cancel_url: "http://localhost:3000/cancel"
+  //});
 
-  res.send(JSON.stringify({
-    url: sessopm.url
-  }));
+  //res.send(JSON.stringify({
+    //url: sessopm.url
+  //}));
 });
-app.listen(3000, () => console.log("Listening on port 3000"))
+//app.listen(3000, () => console.log("Listening on port 3000"))
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {
