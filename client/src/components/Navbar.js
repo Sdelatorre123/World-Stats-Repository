@@ -1,20 +1,18 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import { Button, Container, Form, Navbar, Nav } from 'react-bootstrap';
 
-
- import SingUpForm from './SingupForm';
+import Subscription from './Success';
+import SingUpForm from './SingupForm';
 import LoginForm from './LoginForm';
 import Discussion from '../pages/Discussion';
 
 import Auth from '../utils/auth';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { handleError } from '@apollo/client/link/http/parseAndCheckHttpResponse';
 
 
 function WorldCupNavbar() {
     return (
+      <>
       <Navbar bg="primary" expand="lg">
         <Container fluid>
           <Navbar.Brand className='text-white'>WorldStat
@@ -33,7 +31,8 @@ function WorldCupNavbar() {
               <Nav.Link href="login"><h3 className='text-white mainlink'  >Login</h3></Nav.Link>
               <Nav.Link href="signup"><h3 className='text-white mainlink'  >SignUp</h3></Nav.Link>
               <Nav.Link href="discussion"><h3 className='text-white mainlink'  >Discussion</h3></Nav.Link>
-            
+              <Nav.Link href="subscription"><h3 className='text-white mainlink'  >Subscribe</h3></Nav.Link>
+
             </Nav>
             <Form className="d-flex">
               <Form.Control
@@ -47,6 +46,7 @@ function WorldCupNavbar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </>
     );
   }
   
