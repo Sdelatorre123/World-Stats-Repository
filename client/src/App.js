@@ -2,6 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import "@stripe/stripe-js"
+
+import Checkout from "./components/Checkout";
+import Success from "./components/Success";
+import Cancel from "./components/Cancel";
 
 import {
   ApolloClient,
@@ -60,6 +65,9 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/discussion" element={<Discussion />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="success" element={<Success />} />
+          <Route path="cancel" element={<Cancel />} />
       
           {/* <Route path="/success" element={<success />} />
           <Route path="/cancel" element={<cancel />} /> */}

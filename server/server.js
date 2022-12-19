@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 // Standard Subscription: price_1MG3g0LpXyZJqOSzIy4xGHUi
 // Premium Subscription: price_1MG3hpLpXyZJqOSzhcHjyFhj
 // Exclusive Subscription: price_1MG3jeLpXyZJqOSzv5niurtQ
-/* const express = require('express'); */
+const express = require('express');
 var cors = require('cors');
 const stripe = require('stripe')('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');
 

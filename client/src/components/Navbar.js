@@ -1,6 +1,6 @@
 import { Button, Container, Form, Navbar, Nav } from 'react-bootstrap';
 
-import Subscription from './Subscription';
+import Subscription from './Success';
 import SingUpForm from './SingupForm';
 import LoginForm from './LoginForm';
 import Discussion from '../pages/Discussion';
