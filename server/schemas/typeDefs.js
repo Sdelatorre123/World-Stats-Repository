@@ -36,8 +36,8 @@ const typeDefs = gql`
   type Query {
     user: [User]
     team: Team
-    thread: Tread
-    forums: forums
+    thread: Thread
+    forums: Forums
     comments: [Comments]
 
   }
@@ -45,7 +45,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!, thoughtAuthor: String!): Thought
+    addThread(threadText: String!, threadAuthor: String!): Thread
   }
 `;
 
