@@ -4,11 +4,11 @@ import { useQuery } from '@apollo/client';
 import ThoughtList from '../components/ThoughtList';
 import ThoughtForm from '../components/ThoughtForm';
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { QUERY_THREAD } from '../utils/queries';
 
 const Discussion = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
+  const { loading, data } = useQuery(QUERY_THREAD);
+  const threads = data?.threads || [];
 
   return (
     <main>
@@ -24,7 +24,7 @@ const Discussion = () => {
             <div>Loading...</div>
           ) : (
             <ThoughtList
-              thoughts={thoughts}
+              threads={threads}
               title="Messi Reall the goat Thought(s)..."
             />
           )}

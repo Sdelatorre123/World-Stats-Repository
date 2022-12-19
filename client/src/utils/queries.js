@@ -1,12 +1,12 @@
 import { gql } from '@apollo/client';
 
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+export const QUERY_THREAD = gql`
+  query getThreads {
+    threads {
       _id
-      thoughtText
-      thoughtAuthor
+      threadText
+      threadAuthor
       createdAt
     }
   }
@@ -16,7 +16,7 @@ export const QUERY_THOUGHTS = gql`
 export const QUERY_USER = gql`
   {
     user {
-      username
+      name
       comments {
         _id
         rating

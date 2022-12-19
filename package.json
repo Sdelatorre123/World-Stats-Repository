@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@stripe/stripe-js": "^1.46.0",
+        "apollo": "^2.34.0",
         "bootstrap": "^5.2.3",
         "jsonwebtoken": "^8.5.1",
         "react-bootstrap": "^2.7.0",

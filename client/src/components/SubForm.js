@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../utils/mutations';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { ADD_THREAD } from '../utils/mutations';
+import { QUERY_THREAD } from '../utils/queries';
 import { Form, Button } from 'react-bootstrap';
 
 const SubForm = () => {
@@ -12,15 +12,15 @@ const SubForm = () => {
   });
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
+  const [addThread, { error }] = useMutation(ADD_THREAD, {
     // All returning data from Apollo Client queries/mutations return in a `data` field, followed by the the data returned by the request
-    update(cache, { data: { addThought } }) {
+    update(cache, { data: { addThread } }) {
       try {
-        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { threads } = cache.readQuery({ query: QUERY_THREAD });
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
-          data: { thoughts: [addThought, ...thoughts] },
+          query: QUERY_THREAD,
+          data: { threads: [addThread, ...threads] },
         });
       } catch (e) {
         console.error(e);
@@ -32,13 +32,13 @@ const SubForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addThought({
+      const { data } = await addThread({
         variables: { ...formState },
       });
 
       setFormState({
-        thoughtText: '',
-        thoughtAuthor: '',
+        threadText: '',
+        threadAuthor: '',
       });
     } catch (err) {
       console.error(err);
@@ -48,10 +48,10 @@ const SubForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 280) {
+    if (name === 'threadText' && value.length <= 280) {
       setFormState({ ...formState, [name]: value });
       setCharacterCount(value.length);
-    } else if (name !== 'thoughtText') {
+    } else if (name !== 'threadText') {
       setFormState({ ...formState, [name]: value });
     }
   };

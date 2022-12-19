@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../utils/mutations';
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { ADD_THREAD } from '../utils/mutations';
+import { QUERY_THREAD } from '../utils/queries';
 
 const ThoughtForm = () => {
   const [formState, setFormState] = useState({
@@ -11,15 +11,15 @@ const ThoughtForm = () => {
   });
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addThought, { error }] = useMutation(ADD_THOUGHT, {
+  const [addThread, { error }] = useMutation(ADD_THREAD, {
     // All returning data from Apollo Client queries/mutations return in a `data` field, followed by the the data returned by the request
     update(cache, { data: { addThought } }) {
       try {
-        const { thoughts } = cache.readQuery({ query: QUERY_THOUGHTS });
+        const { threads } = cache.readQuery({ query: QUERY_THREAD });
 
         cache.writeQuery({
-          query: QUERY_THOUGHTS,
-          data: { thoughts: [addThought, ...thoughts] },
+          query: QUERY_THREAD,
+          data: { thoughts: [addThought, ...threads] },
         });
       } catch (e) {
         console.error(e);
@@ -31,7 +31,7 @@ const ThoughtForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addThought({
+      const { data } = await addThread({
         variables: { ...formState },
       });
 
@@ -47,10 +47,10 @@ const ThoughtForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'thoughtText' && value.length <= 280) {
+    if (name === 'threadText' && value.length <= 280) {
       setFormState({ ...formState, [name]: value });
       setCharacterCount(value.length);
-    } else if (name !== 'thoughtText') {
+    } else if (name !== 'treadText') {
       setFormState({ ...formState, [name]: value });
     }
   };
@@ -73,9 +73,9 @@ const ThoughtForm = () => {
       >
         <div className="col-12">
           <textarea
-            name="thoughtText"
-            placeholder="Here's a new thought..."
-            value={formState.thoughtText}
+            name="threadText"
+            placeholder="Here's a new thread..."
+            value={formState.threadText}
             className="form-input w-100"
             style={{ lineHeight: '1.5' }}
             onChange={handleChange}
@@ -83,9 +83,9 @@ const ThoughtForm = () => {
         </div>
         <div className="col-12 col-lg-9">
           <input
-            name="thoughtAuthor"
+            name="threadAuthor"
             placeholder="Add your name to get credit for the thought..."
-            value={formState.thoughtAuthor}
+            value={formState.threadAuthor}
             className="form-input w-100"
             onChange={handleChange}
           />
@@ -93,7 +93,7 @@ const ThoughtForm = () => {
 
         <div className="col-12 col-lg-3">
           <button className="btn btn-primary btn-block py-3" type="submit">
-            Add Thought
+            Add Thread
           </button>
         </div>
         {error && (

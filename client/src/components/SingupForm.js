@@ -43,7 +43,7 @@ const SignupForm = () => {
     }
 
     setUserFormData({
-      username: '',
+      name: '',
       email: '',
       password: '',
     });
@@ -59,13 +59,13 @@ const SignupForm = () => {
         </Alert>
 
         <Form.Group>
-          <Form.Label htmlFor='username'>Username</Form.Label>
+          <Form.Label htmlFor='name'>Username</Form.Label>
           <Form.Control
             type='text'
             placeholder='Your username'
-            name='username'
+            name='name'
             onChange={handleInputChange}
-            value={userFormData.username}
+            value={userFormData.name}
             required
           />
           <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
@@ -97,7 +97,7 @@ const SignupForm = () => {
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
-          disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+          disabled={!(userFormData.name && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>
           Submit
