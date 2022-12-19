@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { Row, Col } from 'react-bootstrap';
 
 import { ADD_THOUGHT } from '../utils/mutations';
 import { QUERY_THOUGHTS } from '../utils/queries';
@@ -64,13 +65,26 @@ const SubForm = () => {
         <Form.Label>Credit Card #</Form.Label>
         <Form.Control type="input" placeholder="Enter Credit Card" />
       </Form.Group>
-
+      <Form.Group className="mb-3" controlId="formBasicCheckbox">
+      <Row>
+        <Col> <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Experation Date </Form.Label>
+        <Form.Control type="Experation Date" placeholder="Experation Date" />
+      </Form.Group> </Col>
+        <Col><Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>CVV #</Form.Label>
+        <Form.Control type="CVV #" placeholder="CVV" />
+      </Form.Group></Col>
+        <Col><Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Zip Code </Form.Label>
+        <Form.Control type="Zip Code" placeholder="Zip Code" />
+      </Form.Group> </Col>
+      </Row>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control type="email" placeholder="Enter email" />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me" />
+        <Form.Check type="checkbox" label="Remember me next time" />
       </Form.Group>
       <Button variant="primary" type="submit">
         Submit
