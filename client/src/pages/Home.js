@@ -1,6 +1,6 @@
 import { Card, Container, Col, Row } from 'react-bootstrap';
 import Cards from '../components/Cards';
-import Checkout from '../components/Checkout';
+/* import Checkout from '../components/Checkout'; */
 import Image from '../components/Image';
 
 function Home() {
@@ -12,10 +12,7 @@ function Home() {
           <Col md={8}> 
           <Cards></Cards>
             </Col>
-            <Col md={8}> 
-          <Checkout></Checkout>
-            </Col>
-          <Col md={4}>
+            <Col md={4}>
           <Image></Image>
             </Col>
         </Row>

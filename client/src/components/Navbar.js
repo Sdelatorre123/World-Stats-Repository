@@ -25,9 +25,6 @@ function WorldCupNavbar() {
               style={{ maxHeight: '100px' }}
               navbarScroll
             >
-              <Nav.Link href="home"><h3 className='text-white mainlink'  >Home</h3></Nav.Link>
-              <Nav.Link href="worldcup"><h3 className='text-white mainlink'  >WorldCup</h3></Nav.Link>
-  
               <Nav.Link href="login"><h3 className='text-white mainlink'  >Login</h3></Nav.Link>
               <Nav.Link href="signup"><h3 className='text-white mainlink'  >SignUp</h3></Nav.Link>
               <Nav.Link href="discussion"><h3 className='text-white mainlink'  >Discussion</h3></Nav.Link>
