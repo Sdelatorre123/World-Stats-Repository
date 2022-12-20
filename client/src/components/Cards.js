@@ -1,5 +1,6 @@
 import React from 'react'
-import { Card, Table} from 'react-bootstrap'
+import { Card, Form, Table, Row} from 'react-bootstrap'
+import flex from 'react'
 
 export default function Cards() {
   return <React.Fragment>
@@ -93,13 +94,18 @@ export default function Cards() {
         </tr>
       </tbody>
     </Table>
-<div className="checkout">
-  <h1>Subscribe</h1>
-  <p className="checkout-title"> Subscribe to get the newest info about the World Cup!! </p>
-  <h1 className="checkout-price">$10</h1>
-  <button
-    className="checkout-button"/>
-</div>
-
+    <Card className="my-2">
+    <Card.Title style={{ display: flex }}>Subscribe</Card.Title>
+    <p className="Subscription-title"> Subscribe to get the newest info about the World Cup!! </p>
+    <Card.Text> Standard $10/monthly </Card.Text>
+    <Card.Text> Premium $15/monthly </Card.Text>
+    <Card.Text> Exclusive $20/monthly </Card.Text>
+    <Row>
+    <Form.Check type="checkbox" ClassName="my-2 text-center" label="Country flags apper next to your name" />
+    <Form.Check type="checkbox" ClassName="my-2 text-center" label="Recieve exclusive merch from your favorite teams" />
+    <Form.Check type="checkbox" ClassName="my-2 text-center" label="Post to the chat room and make some new friends" />
+    <Form.Check type="checkbox" ClassName="my-2 text-center" label="Individual features and player stats" />
+    </Row>
+    </Card>
   </React.Fragment>
 }
